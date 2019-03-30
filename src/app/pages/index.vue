@@ -10,7 +10,7 @@
       </h2>
       <div class="links">
         <a
-          href="/api/auth/login"
+          href="/api/auth/eveonline"
           target="_blank"
           class="button--green"
         >Login</a>
