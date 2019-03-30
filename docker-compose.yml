@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    container_name: eonext_account
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 4000:3000
+    volumes:
+      - ./src:/src:cached
+      # exclude volumes
+      - /src/app/node_modules
+    tty: true
+    stdin_open: true
+    # Hot Module Replacement (HMR) is enable for virtual box.
+    environment:
+      - CHOKIDAR_USEPOLLING=true
