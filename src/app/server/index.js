@@ -4,7 +4,7 @@ const { Nuxt, Builder } = require('nuxt')
 const app = express()
 const session = require('express-session')
 const passport = require('passport')
-const { EveOnlineSsoStrategy } = require('passport-eveonline-sso')
+const EveOnlineSsoStrategy = require('passport-eveonline-sso')
 const bodyParser = require('body-parser')
 
 // Import and Set Nuxt.js options
@@ -90,6 +90,11 @@ async function start() {
     req.logout()
     res.redirect('/')
   })
+
+  module.exports = {
+    path: '/api',
+    handler: app
+  }
 
   // Listen the server
   app.listen(port, host)

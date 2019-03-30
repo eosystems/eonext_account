@@ -10,15 +10,10 @@
       </h2>
       <div class="links">
         <a
-          href="https://nuxtjs.org/"
+          href="/api/auth/login"
           target="_blank"
           class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
+        >Login</a>
       </div>
     </div>
   </section>
