@@ -14,8 +14,11 @@ export default {
       params: this.$route.query
     })
     const user = {
-      id: res.data.user.id,
-      name: res.data.user.username
+      id: res.data.user.profile.CharacterID,
+      name: res.data.user.profile.CharacterName,
+      accessToken: res.data.user.accessToken,
+      refreshToken: res.data.user.refreshToken,
+      data: res.data.user
     }
     this.$store.commit('login', user)
     this.$router.push('/home')
