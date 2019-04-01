@@ -10,9 +10,11 @@ export default {
     }
   },
   async mounted() {
+    await this.$axios.post('http//:localhost:3001/login')
     const res = await this.$axios.get('/api/auth/callback', {
       params: this.$route.query
     })
+
     const user = {
       id: res.data.user.profile.CharacterID,
       name: res.data.user.profile.CharacterName,

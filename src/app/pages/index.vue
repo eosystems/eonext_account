@@ -25,6 +25,10 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
+  },
+  async mounted() {
+    console.log('me')
+    await this.$axios.post('http//:localhost:3001/login')
   }
 }
 </script>
