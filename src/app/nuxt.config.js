@@ -40,8 +40,17 @@ module.exports = {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
+  proxy: {
+    '/base/': {
+       target: 'http://0.0.0.0:3001',
+       "secure": false,
+       "changeOrigin": true,
+       pathRewrite: {'^/base/': ''}
+     }
+  },
   /*
   ** Axios module configuration
   */

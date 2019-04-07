@@ -28,7 +28,7 @@ export default {
   },
   async mounted() {
     console.log('me')
-    await this.$axios.post('http//:localhost:3001/login')
+    await this.$axios.get('http://localhost:4000/base/login')
   }
 }
 </script>
