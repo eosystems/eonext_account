@@ -40,25 +40,18 @@ module.exports = {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/proxy'
+    '@nuxtjs/axios'
   ],
-  proxy: {
-    '/base/': {
-       target: 'http://0.0.0.0:3001',
-       "secure": false,
-       "changeOrigin": true,
-       pathRewrite: {'^/base/': ''}
-     }
-  },
   /*
   ** Axios module configuration
   */
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'http://localhost:4000'
+    proxy: true
   },
-
+  proxy: {
+    '/base/': { target: 'http://docker.for.mac.localhost:3001', pathRewrite: {'^/base/': '' } },
+    '/api/': 'http://0.0.0.0:4000'
+  },
   serverMiddleware: [
     '~/server'
   ],
