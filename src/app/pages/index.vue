@@ -27,8 +27,11 @@ export default {
     Logo
   },
   async mounted() {
-    console.log('me')
-    await this.$axios.post('/base/login')
+    await this.$axios.post('/base/login', {
+      login: {
+        access_token: 'aaa'
+      }
+    })
   }
 }
 </script>

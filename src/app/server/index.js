@@ -66,7 +66,7 @@ passport.use(
       // We have a new authed session, you can now store and/or use the accessToken
       // and refreshToken to call EVE Swagger Interface (ESI) end points
       process.nextTick(() => {
-        return done(null, {accessToken, refreshToken, profile})
+        return done(null, { accessToken, refreshToken, profile })
       })
     }
   )
