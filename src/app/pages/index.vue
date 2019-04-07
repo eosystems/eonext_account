@@ -27,18 +27,12 @@ export default {
     Logo
   },
   async mounted() {
-    await this.$axios('/base/login', {
+    const data = JSON.stringify({
       access_token: 'aaa'
     })
-    const res = await this.$axios('/base/login', {
-      method: 'POST',
+    const res = await this.$axios.post('/base/login', data, {
       headers: {
         'content-type': 'application/json'
-      },
-      params: {
-        login: {
-          access_token: 'aaa'
-        }
       }
     })
       .catch((error) => {

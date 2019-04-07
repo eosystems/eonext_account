@@ -46,10 +46,16 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    proxy: true
+    proxy: true,
+    debug: true,
+    requestInterceptor: (config, { store }) => {
+      config.headers.common.Authorization = ''
+      config.headers.common['Content-Type'] = 'application/json'
+      return config
+    }
   },
   proxy: {
-    '/base/': { target: 'http://docker.for.mac.localhost:3001', pathRewrite: { '^/base/': '' }, secure: false },
+    '/base/': { target: 'http://docker.for.mac.localhost:3001', pathRewrite: { '^/base/': '' } },
     '/api/': 'http://0.0.0.0:4000'
   },
   serverMiddleware: [

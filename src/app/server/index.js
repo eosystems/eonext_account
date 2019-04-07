@@ -82,7 +82,7 @@ passport.deserializeUser((obj, done) => {
   done(null, obj)
 })
 
-app.get('/hello', (req, res) => res.send('world'))
+app.post('/hello', (req, res) => res.send('world'))
 app.get('/auth/eveonline', passport.authenticate('eveonline-sso'))
 app.get(
   '/auth/callback',
