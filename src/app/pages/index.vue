@@ -28,12 +28,17 @@ export default {
   },
   async mounted() {
     const data = JSON.stringify({
-      access_token: 'aaa'
+      'access_token': 'aaa'
     })
-    const res = await this.$axios.post('/base/login', data, {
+    this.$axios.setHeader('Content-Type', 'application/x-www-form-urlencoded', [
+      'post'
+    ])
+    this.$axios.post('/base/login', 'aaa').then((res) => { return res })
+    const res = await this.$axios.post('/base/login.json', data, {
       headers: {
         'content-type': 'application/json'
-      }
+      },
+      responseType: 'json'
     })
       .catch((error) => {
         console.log(error)
