@@ -30,11 +30,7 @@ export default {
     const data = JSON.stringify({
       body: 'aaa'
     })
-    this.$axios.get('/me/api/hello').then((res) => { return res })
-    this.$axios.get('/base/users/1').then((res) => { return res })
-    this.$axios.post('//docker.for.mac.localhost:3001/login', data)
-    this.$axios.post('/base2/login', data)
-    this.$axios.post('/base3/login', data)
+    await this.$axios.post('//docker.for.mac.localhost:3001/login', data)
 
     const res = await this.$axios.post('/base/login.json', data, {
       headers: {
