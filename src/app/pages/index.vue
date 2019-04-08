@@ -28,12 +28,14 @@ export default {
   },
   async mounted() {
     const data = JSON.stringify({
-      'access_token': 'aaa'
+      body: 'aaa'
     })
-    this.$axios.setHeader('Content-Type', 'application/x-www-form-urlencoded', [
-      'post'
-    ])
-    this.$axios.post('/base/login', 'aaa').then((res) => { return res })
+    this.$axios.get('/me/api/hello').then((res) => { return res })
+    this.$axios.get('/base/users/1').then((res) => { return res })
+    this.$axios.post('//docker.for.mac.localhost:3001/login', data)
+    this.$axios.post('/base2/login', data)
+    this.$axios.post('/base3/login', data)
+
     const res = await this.$axios.post('/base/login.json', data, {
       headers: {
         'content-type': 'application/json'
@@ -43,6 +45,7 @@ export default {
       .catch((error) => {
         console.log(error)
       })
+
     console.log(res)
   }
 }

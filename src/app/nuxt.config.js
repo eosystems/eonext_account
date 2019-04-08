@@ -55,7 +55,10 @@ module.exports = {
     }
   },
   proxy: {
-    '/base/': { target: 'http://docker.for.mac.localhost:3001', pathRewrite: { '^/base/': '' }, ws: false },
+    '/base/': { target: 'http://docker.for.mac.localhost:3001', pathRewrite: { '^/base': '' }},
+    '/base2/': { target: 'http://0.0.0.0:3001', pathRewrite: { '^/base2': '' }},
+    '/base3/': { target: 'http://host.docker.internal:3001', pathRewrite: { '^/base3': '' }},
+    '/me/': { target: 'http://docker.for.mac.localhost:4000', pathRewrite: { '^/me/': '' }},
     '/api/': 'http://docker.for.mac.localhost:4000'
   },
   serverMiddleware: [
