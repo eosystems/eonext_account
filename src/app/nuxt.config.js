@@ -46,7 +46,7 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    baseUrl: 'http://docker.for.mac.localhost:4000'
+    baseURL: process.env.BASE_URL || 'http://localhost:4000'
   },
   proxy: {
   },

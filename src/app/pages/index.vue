@@ -27,10 +27,10 @@ export default {
     Logo
   },
   async mounted() {
-    const r = JSON.stringify({ access_token: 'aaa' })
+    // const r = JSON.stringify({ access_token: 'aaa' })
     // await this.$axios.post('//docker.for.mac.localhost:3001/login', r)
-    const res = await this.$axios.post('/base/login', r)
-    console.log(res)
+    // const res = await this.$axios.post('/base/login', r)
+    // console.log(res)
   }
 }
 </script>
