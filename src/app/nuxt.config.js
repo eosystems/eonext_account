@@ -47,9 +47,10 @@ module.exports = {
   */
   axios: {
     proxy: true,
+    credentials: false
   },
   proxy: {
-    '/base/': { target: 'http://docker.for.mac.localhost:3001', pathRewrite: { '^/base/': '' }},
+    '/base/': { target: 'http://docker.for.mac.localhost:3001', pathRewrite: { '^/base/': '' } },
     '/api/': 'http://docker.for.mac.localhost:4000'
   },
   serverMiddleware: [

@@ -27,21 +27,9 @@ export default {
     Logo
   },
   async mounted() {
-    const data = JSON.stringify({
-      body: 'aaa'
-    })
-    await this.$axios.post('//docker.for.mac.localhost:3001/login', data)
-
-    const res = await this.$axios.post('/base/login.json', data, {
-      headers: {
-        'content-type': 'application/json'
-      },
-      responseType: 'json'
-    })
-      .catch((error) => {
-        console.log(error)
-      })
-
+    const r = JSON.stringify({ access_token: 'aaa' })
+    // await this.$axios.post('//docker.for.mac.localhost:3001/login', r)
+    const res = await this.$axios.post('/base/login', r)
     console.log(res)
   }
 }
