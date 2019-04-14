@@ -4,7 +4,7 @@
 
 <script>
 import EobaseClient from '~/utils/EobaseClient'
-import VueCookies from 'vue-cookies'
+import Cookies from 'nuxt-universal-cookies'
 
 export default {
   data() {
@@ -31,8 +31,10 @@ export default {
     }
 
     // cookieにログイン情報を保存
-    VueCookies.config('1d')
-    VueCookies.set('eobase-login-token', user.loginToken)
+    const cookies = new Cookies()
+    cookies.set('credential', 'true', { maxAge: 90 })
+
+    // VueCookies.set('eobase-login-token', user.loginToken)
     this.$store.commit('login', user)
     this.$router.push('/home')
   }
