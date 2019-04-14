@@ -5,6 +5,7 @@
     <p>name: {{ $store.state.user.name }}</p>
     <p>accessToken: {{ $store.state.user.accessToken }}</p>
     <p>refreshToken: {{ $store.state.user.refreshToken }}</p>
+    <p>loginToken: {{ $store.state.user.loginToken }}</p>
 
     <br>
     <a

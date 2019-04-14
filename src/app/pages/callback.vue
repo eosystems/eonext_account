@@ -4,6 +4,7 @@
 
 <script>
 import EobaseClient from '~/utils/EobaseClient'
+import Cookie from 'js-cookie'
 
 export default {
   data() {
@@ -28,6 +29,9 @@ export default {
       loginToken: res2.data.data.attributes.login_token,
       data: res.data.user
     }
+
+    // cookieにログイン情報を保存
+    Cookie.set('eobase-login-token', user.loginToken, { expires: 1 })
     this.$store.commit('login', user)
     this.$router.push('/home')
   }
