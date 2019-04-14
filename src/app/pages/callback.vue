@@ -32,7 +32,7 @@ export default {
 
     // cookieにログイン情報を保存
     const cookies = new Cookies()
-    cookies.set('eobase-login-token', user.loginToken, { maxAge: 90 })
+    cookies.set('eobase-login-token', user.loginToken, { maxAge: 60 * 60 * 24 })
     this.$store.commit('login', user)
     this.$router.push('/home')
   }
