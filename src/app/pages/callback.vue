@@ -4,7 +4,7 @@
 
 <script>
 import EobaseClient from '~/utils/EobaseClient'
-import Cookie from 'js-cookie'
+import VueCookies from 'vue-cookies'
 
 export default {
   data() {
@@ -31,7 +31,8 @@ export default {
     }
 
     // cookieにログイン情報を保存
-    Cookie.set('eobase-login-token', user.loginToken, { expires: 1 })
+    VueCookies.config('1d')
+    VueCookies.set('eobase-login-token', user.loginToken)
     this.$store.commit('login', user)
     this.$router.push('/home')
   }
