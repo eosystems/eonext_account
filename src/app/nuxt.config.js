@@ -42,6 +42,9 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios'
   ],
+  env: {
+    eoBaseUrl: process.env.EOBASE_URL || 'http://localhost:3001'
+  },
   /*
   ** Axios module configuration
   */
